@@ -1,0 +1,16 @@
+language: rust
+sudo: true
+rust:
+    - 1.46.0
+
+jobs:
+  include:
+    - stage: "Build"
+      os: linux
+      dist: bionic
+      script:
+        - which rustfmt
+        - rustfmt --version
+        - rustup component add rustfmt
+        - which rustfmt
+        - rustfmt --version
